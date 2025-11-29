@@ -11,7 +11,7 @@ fuel_eff = efficiency.get(road_type, 12)
 else:
      distance=100
      speed=20
-     roadtype="city"
+     road_type="city"
 
 time = distance / speed
 fuel = distance / fuel_eff
