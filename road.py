@@ -9,15 +9,15 @@ distance = float(sys.argv[1])
 speed = float(sys.argv[2])
 road_type = sys.argv[3].lower()
 
-# Simple fuel efficiency assumptions (km per liter)
+# Fuel efficiency assumptions (km per liter)
 efficiency = {"highway": 15, "city": 10, "offroad": 8}
 
-if road_type not in efficiency:
-    print("Road type must be: highway, city, or offroad")
-    sys.exit(1)
+# If road type not in dictionary, use a default value
+fuel_eff = efficiency.get(road_type, 12)
 
 time = distance / speed
-fuel = distance / efficiency[road_type]
+fuel = distance / fuel_eff
 
 print("Trip time:", round(time, 2), "hours")
 print("Fuel used:", round(fuel, 2), "liters")
+print("Road type:", road_type, "(efficiency used:", fuel_eff, "km/l)")
