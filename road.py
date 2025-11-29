@@ -9,9 +9,9 @@ road_type = sys.argv[3].lower()
 efficiency = {"highway": 15, "city": 10, "offroad": 8}
 fuel_eff = efficiency.get(road_type, 12)
 else:
-    distance=100
-    speed=20
-    roadtype="city"
+     distance=100
+     speed=20
+     roadtype="city"
 
 time = distance / speed
 fuel = distance / fuel_eff
